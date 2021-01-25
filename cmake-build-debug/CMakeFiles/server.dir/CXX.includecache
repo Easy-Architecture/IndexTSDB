@@ -19,7 +19,13 @@ unistd.h
 -
 netinet/in.h
 -
+algorithm
+-
 iostream
+-
+assert.h
+-
+uv.h
 -
 sys/stat.h
 -
@@ -82,5 +88,7 @@ poll.h
 sys/epoll.h
 -
 fcntl.h
+-
+errno.h
 -
 
