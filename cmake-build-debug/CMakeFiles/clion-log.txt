@@ -1,0 +1,7 @@
+/usr/clion-2020.3.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/maomao/Project/easySQl/IndexTSDB
+    -- src/server.cpp will be compiled to bin/server
+    -- src/main.cpp will be compiled to bin/main
+    -- src/sqlwordsplitter.cpp will be compiled to bin/sqlwordsplitter
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug

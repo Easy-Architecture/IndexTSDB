@@ -1,0 +1,6 @@
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles/IndexTSDB.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles/server.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles/main.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles/sqlwordsplitter.dir
