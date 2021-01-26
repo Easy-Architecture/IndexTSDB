@@ -15,6 +15,7 @@
 using namespace std;
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <sys/syscall.h>
 #include <errno.h>
 #include <unistd.h>

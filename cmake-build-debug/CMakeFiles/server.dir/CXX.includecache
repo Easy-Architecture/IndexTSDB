@@ -31,6 +31,8 @@ sys/stat.h
 -
 sys/types.h
 -
+sys/wait.h
+-
 sys/syscall.h
 -
 errno.h
