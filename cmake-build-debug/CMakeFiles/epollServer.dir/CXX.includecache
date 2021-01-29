@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/maomao/Project/easySQl/IndexTSDB/epollServer/server.cpp
+/home/maomao/Project/easySQl/IndexTSDB/epollServer/epollReactorServer.cpp
 ../gloabl.h
 /home/maomao/Project/easySQl/IndexTSDB/gloabl.h
+
+/home/maomao/Project/easySQl/IndexTSDB/epollServer/epollReactorServer.h
 
 /home/maomao/Project/easySQl/IndexTSDB/gloabl.h
 stdio.h
@@ -95,4 +97,8 @@ errno.h
 -
 time.h
 -
+
+/home/maomao/Project/easySQl/IndexTSDB/main.cpp
+epollServer/epollReactorServer.h
+/home/maomao/Project/easySQl/IndexTSDB/epollServer/epollReactorServer.h
 

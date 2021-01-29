@@ -76,17 +76,6 @@ CMAKE_BINARY_DIR = /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/clion-2020.3.1/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -97,6 +86,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/clion-2020.3.1/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -131,83 +131,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named IndexTSDB
+# Target rules for targets named epollServer
 
 # Build rule for target.
-IndexTSDB: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 IndexTSDB
-.PHONY : IndexTSDB
+epollServer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 epollServer
+.PHONY : epollServer
 
 # fast build rule for target.
-IndexTSDB/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IndexTSDB.dir/build.make CMakeFiles/IndexTSDB.dir/build
-.PHONY : IndexTSDB/fast
+epollServer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/build
+.PHONY : epollServer/fast
 
-#=============================================================================
-# Target rules for targets named server
+epollServer/epollReactorServer.o: epollServer/epollReactorServer.cpp.o
 
-# Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server
-.PHONY : server
-
-# fast build rule for target.
-server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-.PHONY : server/fast
-
-#=============================================================================
-# Target rules for targets named main
-
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
-
-#=============================================================================
-# Target rules for targets named sqlwordsplitter
-
-# Build rule for target.
-sqlwordsplitter: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sqlwordsplitter
-.PHONY : sqlwordsplitter
-
-# fast build rule for target.
-sqlwordsplitter/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sqlwordsplitter.dir/build.make CMakeFiles/sqlwordsplitter.dir/build
-.PHONY : sqlwordsplitter/fast
-
-epollServer/server.o: epollServer/server.cpp.o
-
-.PHONY : epollServer/server.o
+.PHONY : epollServer/epollReactorServer.o
 
 # target to build an object file
-epollServer/server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/epollServer/server.cpp.o
-.PHONY : epollServer/server.cpp.o
+epollServer/epollReactorServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/epollServer/epollReactorServer.cpp.o
+.PHONY : epollServer/epollReactorServer.cpp.o
 
-epollServer/server.i: epollServer/server.cpp.i
+epollServer/epollReactorServer.i: epollServer/epollReactorServer.cpp.i
 
-.PHONY : epollServer/server.i
+.PHONY : epollServer/epollReactorServer.i
 
 # target to preprocess a source file
-epollServer/server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/epollServer/server.cpp.i
-.PHONY : epollServer/server.cpp.i
+epollServer/epollReactorServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/epollServer/epollReactorServer.cpp.i
+.PHONY : epollServer/epollReactorServer.cpp.i
 
-epollServer/server.s: epollServer/server.cpp.s
+epollServer/epollReactorServer.s: epollServer/epollReactorServer.cpp.s
 
-.PHONY : epollServer/server.s
+.PHONY : epollServer/epollReactorServer.s
 
 # target to generate assembly for a file
-epollServer/server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/epollServer/server.cpp.s
-.PHONY : epollServer/server.cpp.s
+epollServer/epollReactorServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/epollServer/epollReactorServer.cpp.s
+.PHONY : epollServer/epollReactorServer.cpp.s
 
 main.o: main.cpp.o
 
@@ -215,8 +176,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IndexTSDB.dir/build.make CMakeFiles/IndexTSDB.dir/main.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -225,8 +185,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IndexTSDB.dir/build.make CMakeFiles/IndexTSDB.dir/main.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -235,36 +194,8 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IndexTSDB.dir/build.make CMakeFiles/IndexTSDB.dir/main.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-sqlPaser/sqlwordsplitter.o: sqlPaser/sqlwordsplitter.cpp.o
-
-.PHONY : sqlPaser/sqlwordsplitter.o
-
-# target to build an object file
-sqlPaser/sqlwordsplitter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sqlwordsplitter.dir/build.make CMakeFiles/sqlwordsplitter.dir/sqlPaser/sqlwordsplitter.cpp.o
-.PHONY : sqlPaser/sqlwordsplitter.cpp.o
-
-sqlPaser/sqlwordsplitter.i: sqlPaser/sqlwordsplitter.cpp.i
-
-.PHONY : sqlPaser/sqlwordsplitter.i
-
-# target to preprocess a source file
-sqlPaser/sqlwordsplitter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sqlwordsplitter.dir/build.make CMakeFiles/sqlwordsplitter.dir/sqlPaser/sqlwordsplitter.cpp.i
-.PHONY : sqlPaser/sqlwordsplitter.cpp.i
-
-sqlPaser/sqlwordsplitter.s: sqlPaser/sqlwordsplitter.cpp.s
-
-.PHONY : sqlPaser/sqlwordsplitter.s
-
-# target to generate assembly for a file
-sqlPaser/sqlwordsplitter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sqlwordsplitter.dir/build.make CMakeFiles/sqlwordsplitter.dir/sqlPaser/sqlwordsplitter.cpp.s
-.PHONY : sqlPaser/sqlwordsplitter.cpp.s
 
 # Help Target
 help:
@@ -274,19 +205,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... IndexTSDB"
-	@echo "... main"
-	@echo "... server"
-	@echo "... sqlwordsplitter"
-	@echo "... epollServer/server.o"
-	@echo "... epollServer/server.i"
-	@echo "... epollServer/server.s"
+	@echo "... epollServer"
+	@echo "... epollServer/epollReactorServer.o"
+	@echo "... epollServer/epollReactorServer.i"
+	@echo "... epollServer/epollReactorServer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... sqlPaser/sqlwordsplitter.o"
-	@echo "... sqlPaser/sqlwordsplitter.i"
-	@echo "... sqlPaser/sqlwordsplitter.s"
 .PHONY : help
 
 

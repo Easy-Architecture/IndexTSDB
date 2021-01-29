@@ -48,8 +48,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/IndexTSDB.dir/DependInfo.cmake"
-  "CMakeFiles/server.dir/DependInfo.cmake"
-  "CMakeFiles/main.dir/DependInfo.cmake"
-  "CMakeFiles/sqlwordsplitter.dir/DependInfo.cmake"
+  "CMakeFiles/epollServer.dir/DependInfo.cmake"
   )

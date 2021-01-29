@@ -46,9 +46,13 @@ using namespace std;
 #include <sys/epoll.h>
 #include <fcntl.h>
 #include <errno.h>
+#include <time.h>
 #define TESTPATH "/tmp/test.txt"
 #endif //ADVANCED_EXERCISES_GLOABL_H
 
 #define MAXLINE 8192
 #define SERV_PORT 9999
 #define OPEN_MAX 5000
+#define MAX_EVENTS 1024  //监听数上限
+#define BUFLEN 4096
+#define EVENT_SIZE 1024

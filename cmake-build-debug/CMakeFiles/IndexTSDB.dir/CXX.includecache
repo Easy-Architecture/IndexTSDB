@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/maomao/Project/easySQl/IndexTSDB/epollServer/epollServer.h
+
+/home/maomao/Project/easySQl/IndexTSDB/main.cpp
+epollServer/epollServer.h
+/home/maomao/Project/easySQl/IndexTSDB/epollServer/epollServer.h
+

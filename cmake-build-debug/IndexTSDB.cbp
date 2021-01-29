@@ -17,16 +17,6 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug"/>
 				<Option type="4"/>
@@ -37,30 +27,18 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="IndexTSDB">
-				<Option output="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/IndexTSDB" prefix_auto="0" extension_auto="0"/>
+			<Target title="rebuild_cache">
 				<Option working_dir="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 IndexTSDB"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="IndexTSDB/fast">
-				<Option output="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/IndexTSDB" prefix_auto="0" extension_auto="0"/>
+			<Target title="epollServer">
+				<Option output="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/epollServer" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -75,14 +53,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 IndexTSDB/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 epollServer"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="server">
-				<Option output="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/server" prefix_auto="0" extension_auto="0"/>
+			<Target title="epollServer/fast">
+				<Option output="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/epollServer" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -97,137 +75,27 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 server"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="server/fast">
-				<Option output="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 server/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="main">
-				<Option output="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 main"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="main/fast">
-				<Option output="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 main/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sqlwordsplitter">
-				<Option output="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/sqlwordsplitter" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 sqlwordsplitter"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="sqlwordsplitter/fast">
-				<Option output="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/sqlwordsplitter" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 sqlwordsplitter/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 epollServer/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/epollServer/server.cpp">
-			<Option target="server"/>
+		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/epollServer/epollReactorServer.cpp">
+			<Option target="epollServer"/>
+		</Unit>
+		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/epollServer/epollReactorServer.h">
+			<Option target="epollServer"/>
+		</Unit>
+		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/epollServer/epollServer.h">
+			<Option target="epollServer"/>
 		</Unit>
 		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/gloabl.h">
-			<Option target="server"/>
-			<Option target="main"/>
-			<Option target="sqlwordsplitter"/>
+			<Option target="epollServer"/>
 		</Unit>
 		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/main.cpp">
-			<Option target="IndexTSDB"/>
-			<Option target="main"/>
-		</Unit>
-		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/sqlPaser/sqlwordsplitter.cpp">
-			<Option target="sqlwordsplitter"/>
+			<Option target="epollServer"/>
 		</Unit>
 		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
