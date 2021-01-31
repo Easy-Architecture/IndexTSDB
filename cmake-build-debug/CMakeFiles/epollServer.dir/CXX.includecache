@@ -10,8 +10,6 @@
 ../gloabl.h
 /home/maomao/Project/easySQl/IndexTSDB/gloabl.h
 
-/home/maomao/Project/easySQl/IndexTSDB/epollServer/epollReactorServer.h
-
 /home/maomao/Project/easySQl/IndexTSDB/gloabl.h
 stdio.h
 -
@@ -97,8 +95,4 @@ errno.h
 -
 time.h
 -
-
-/home/maomao/Project/easySQl/IndexTSDB/main.cpp
-epollServer/epollReactorServer.h
-/home/maomao/Project/easySQl/IndexTSDB/epollServer/epollReactorServer.h
 

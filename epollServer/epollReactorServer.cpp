@@ -20,18 +20,19 @@ typedef struct epollReactor{
 
 //全局epoll树的根
 int gepfd = 0;
-int i;
 erStruct epollevents[EVENT_SIZE+1];
 void readData(int fd,int events,void *arg);
-
+void syserror(char* errmessage){
+    perror(errmessage);
+    exit(1);
+}
 //添加事件
 void eventadd(int fd,int events,void(*call_back)(int ,int ,void *),void *arg,erStruct *er)
 {
     er->fd =fd;                           //要监听的文件描述符
-    er->events = events;                  //对应的监听事件
     er->call_back=call_back;
     struct epoll_event epv;
-    epv.events = events;
+    epv.events = er->events= events;      //对应的监听事件
     epv.data.ptr = er;                    //核心思想 将自定义结构体 封装到epoll_event结构体 自定义结构体内封装回调函数 在需要时可以调出使用
     epoll_ctl(gepfd,EPOLL_CTL_ADD,fd,&epv);//添加
 }
@@ -41,7 +42,6 @@ void eventset(int fd,int events,void (*call_back)(int,int,void *),void *arg,erSt
     er->fd = fd;
     er->events = events;
     er->call_back = call_back;
-
     struct epoll_event epv;
     epv.events = events;
     epv.data.ptr = er;
@@ -65,9 +65,21 @@ void eventdel(erStruct *ev,int fd,int events)
 //发送数据
 void senddata(int fd,int events,void *arg)
 {
+    int n;
     printf("begin call %s\n",__FUNCTION__ );
     erStruct *ev =(epollReactor *)arg;
-    write(fd,ev->buf,ev->buflen);
+    again:
+    if ((n=write(fd,ev->buf,ev->buflen))==-1)
+    {
+        if (errno==EINTR)
+        {
+            goto again;
+        }
+        else
+        {
+            syserror("write error!");
+        }
+    }
     eventset(fd,EPOLLIN,readData,arg,ev);
 
 }
@@ -77,6 +89,15 @@ void readData(int fd,int events,void *arg)
     printf("begin call %s\n",__FUNCTION__ );
     erStruct *ev = (epollReactor *)arg;
     ev->buflen = read(fd,ev->buf,sizeof (ev->buf)); //通过read函数获取 字符长度赋值给buflen
+    again:
+    if (ev->buflen ==-1){
+        if (errno == EINTR)
+        {
+          goto again;
+        }else{
+            syserror("read error!");
+        }
+    }
     if (ev->buflen>0) //读到数据
     {
         eventset(fd,EPOLLOUT,senddata,arg,ev);
@@ -94,7 +115,17 @@ void initAccept(int fd,int events,void *arg)
     int i;
     struct sockaddr_in addr;
     socklen_t  len = sizeof (addr);
-    int cfd = accept(fd,(struct sockaddr*)&addr,&len);//是否会阻塞?
+    int cfd = accept(fd,(struct sockaddr*)&addr,&len);//是否会阻塞
+    again:
+    if (cfd <0){
+        if ((errno == ECONNABORTED) || (errno == EINTR))
+        {
+            goto again;
+        }
+        else{
+            syserror("accept error");
+        }
+    }
     //查找myevents数组中可用的位置
     for (i = 0; i < EVENT_SIZE;i ++) {
         if (epollevents[i].fd ==0)//0标准输入 1标准输出 2标准错误
@@ -106,10 +137,16 @@ void initAccept(int fd,int events,void *arg)
     //设置读事件
     eventadd(cfd,EPOLLIN,readData,&epollevents[i],&epollevents[i]);
 }
+
 int startServer(int port)
 {
+    int n;
     //创建socket
     int lfd = socket(AF_INET,SOCK_STREAM,0);
+    if (lfd <0)
+    {
+        syserror("socket error!");
+    }
     //端口复用
     int opt = 1;
     setsockopt(lfd,SOL_SOCKET,SO_REUSEADDR,&opt,sizeof (opt));
@@ -118,9 +155,16 @@ int startServer(int port)
     servaddr.sin_family = AF_INET;
     servaddr.sin_port = htons(port);
     servaddr.sin_addr.s_addr = htonl(INADDR_ANY);//0.0.0.0 本机所有ip 不论那块网卡
-    bind(lfd,(struct sockaddr*)&servaddr,sizeof (servaddr));
+    if((n=bind(lfd,(struct sockaddr*)&servaddr,sizeof (servaddr))<0))
+    {
+        syserror("bind error!");
+    }
+
     //监听
-    listen(lfd,128);
+    if ((n=listen(lfd,128))<0)
+    {
+        syserror("listen error!");
+    }
 
     //创建epoll树根节点
     gepfd = epoll_create(1024);
@@ -131,6 +175,7 @@ int startServer(int port)
 
     for(;;)
     {
+        ///TODO超时管理
         //监听红黑树g_efd,将满足的事件的文件描述符加至events数组中,1秒没有事件满足,返回0
         int nready = epoll_wait(gepfd,events,1024,-1);
         if (nready < 0) //调用epoll_wait失败

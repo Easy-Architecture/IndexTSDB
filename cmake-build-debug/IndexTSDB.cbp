@@ -82,13 +82,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/maomao/CProject/senior/socket/epollServer.h">
+			<Option target="epollServer"/>
+		</Unit>
 		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/epollServer/epollReactorServer.cpp">
 			<Option target="epollServer"/>
 		</Unit>
 		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/epollServer/epollReactorServer.h">
-			<Option target="epollServer"/>
-		</Unit>
-		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/epollServer/epollServer.h">
 			<Option target="epollServer"/>
 		</Unit>
 		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/gloabl.h">
