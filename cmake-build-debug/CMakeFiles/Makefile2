@@ -73,46 +73,289 @@ CMAKE_BINARY_DIR = /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/epollServer.dir/all
+all: CMakeFiles/IndexTSDB.dir/all
+all: epollServer/all
+all: threadPool/all
+all: protocol/all
+all: workQueue/all
+all: sqlPaser/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: epollServer/preinstall
+preinstall: threadPool/preinstall
+preinstall: protocol/preinstall
+preinstall: workQueue/preinstall
+preinstall: sqlPaser/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/epollServer.dir/clean
+clean: CMakeFiles/IndexTSDB.dir/clean
+clean: epollServer/clean
+clean: threadPool/clean
+clean: protocol/clean
+clean: workQueue/clean
+clean: sqlPaser/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/epollServer.dir
+# Directory level rules for directory epollServer
+
+# Recursive "all" directory target.
+epollServer/all: epollServer/CMakeFiles/EpollServer.dir/all
+
+.PHONY : epollServer/all
+
+# Recursive "preinstall" directory target.
+epollServer/preinstall:
+
+.PHONY : epollServer/preinstall
+
+# Recursive "clean" directory target.
+epollServer/clean: epollServer/CMakeFiles/EpollServer.dir/clean
+
+.PHONY : epollServer/clean
+
+#=============================================================================
+# Directory level rules for directory protocol
+
+# Recursive "all" directory target.
+protocol/all: protocol/CMakeFiles/Protocol.dir/all
+
+.PHONY : protocol/all
+
+# Recursive "preinstall" directory target.
+protocol/preinstall:
+
+.PHONY : protocol/preinstall
+
+# Recursive "clean" directory target.
+protocol/clean: protocol/CMakeFiles/Protocol.dir/clean
+
+.PHONY : protocol/clean
+
+#=============================================================================
+# Directory level rules for directory sqlPaser
+
+# Recursive "all" directory target.
+sqlPaser/all: sqlPaser/CMakeFiles/SQLPaser.dir/all
+
+.PHONY : sqlPaser/all
+
+# Recursive "preinstall" directory target.
+sqlPaser/preinstall:
+
+.PHONY : sqlPaser/preinstall
+
+# Recursive "clean" directory target.
+sqlPaser/clean: sqlPaser/CMakeFiles/SQLPaser.dir/clean
+
+.PHONY : sqlPaser/clean
+
+#=============================================================================
+# Directory level rules for directory threadPool
+
+# Recursive "all" directory target.
+threadPool/all: threadPool/CMakeFiles/ThreadPool.dir/all
+
+.PHONY : threadPool/all
+
+# Recursive "preinstall" directory target.
+threadPool/preinstall:
+
+.PHONY : threadPool/preinstall
+
+# Recursive "clean" directory target.
+threadPool/clean: threadPool/CMakeFiles/ThreadPool.dir/clean
+
+.PHONY : threadPool/clean
+
+#=============================================================================
+# Directory level rules for directory workQueue
+
+# Recursive "all" directory target.
+workQueue/all: workQueue/CMakeFiles/WorkQueue.dir/all
+
+.PHONY : workQueue/all
+
+# Recursive "preinstall" directory target.
+workQueue/preinstall:
+
+.PHONY : workQueue/preinstall
+
+# Recursive "clean" directory target.
+workQueue/clean: workQueue/CMakeFiles/WorkQueue.dir/clean
+
+.PHONY : workQueue/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/IndexTSDB.dir
 
 # All Build rule for target.
-CMakeFiles/epollServer.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target epollServer"
-.PHONY : CMakeFiles/epollServer.dir/all
+CMakeFiles/IndexTSDB.dir/all: epollServer/CMakeFiles/EpollServer.dir/all
+CMakeFiles/IndexTSDB.dir/all: threadPool/CMakeFiles/ThreadPool.dir/all
+CMakeFiles/IndexTSDB.dir/all: protocol/CMakeFiles/Protocol.dir/all
+CMakeFiles/IndexTSDB.dir/all: workQueue/CMakeFiles/WorkQueue.dir/all
+CMakeFiles/IndexTSDB.dir/all: sqlPaser/CMakeFiles/SQLPaser.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IndexTSDB.dir/build.make CMakeFiles/IndexTSDB.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IndexTSDB.dir/build.make CMakeFiles/IndexTSDB.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target IndexTSDB"
+.PHONY : CMakeFiles/IndexTSDB.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/epollServer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/epollServer.dir/all
+CMakeFiles/IndexTSDB.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles 13
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/IndexTSDB.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/epollServer.dir/rule
+.PHONY : CMakeFiles/IndexTSDB.dir/rule
 
 # Convenience name for target.
-epollServer: CMakeFiles/epollServer.dir/rule
+IndexTSDB: CMakeFiles/IndexTSDB.dir/rule
 
-.PHONY : epollServer
+.PHONY : IndexTSDB
 
 # clean rule for target.
-CMakeFiles/epollServer.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/clean
-.PHONY : CMakeFiles/epollServer.dir/clean
+CMakeFiles/IndexTSDB.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IndexTSDB.dir/build.make CMakeFiles/IndexTSDB.dir/clean
+.PHONY : CMakeFiles/IndexTSDB.dir/clean
+
+#=============================================================================
+# Target rules for target epollServer/CMakeFiles/EpollServer.dir
+
+# All Build rule for target.
+epollServer/CMakeFiles/EpollServer.dir/all:
+	$(MAKE) $(MAKESILENT) -f epollServer/CMakeFiles/EpollServer.dir/build.make epollServer/CMakeFiles/EpollServer.dir/depend
+	$(MAKE) $(MAKESILENT) -f epollServer/CMakeFiles/EpollServer.dir/build.make epollServer/CMakeFiles/EpollServer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target EpollServer"
+.PHONY : epollServer/CMakeFiles/EpollServer.dir/all
+
+# Build rule for subdir invocation for target.
+epollServer/CMakeFiles/EpollServer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 epollServer/CMakeFiles/EpollServer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles 0
+.PHONY : epollServer/CMakeFiles/EpollServer.dir/rule
+
+# Convenience name for target.
+EpollServer: epollServer/CMakeFiles/EpollServer.dir/rule
+
+.PHONY : EpollServer
+
+# clean rule for target.
+epollServer/CMakeFiles/EpollServer.dir/clean:
+	$(MAKE) $(MAKESILENT) -f epollServer/CMakeFiles/EpollServer.dir/build.make epollServer/CMakeFiles/EpollServer.dir/clean
+.PHONY : epollServer/CMakeFiles/EpollServer.dir/clean
+
+#=============================================================================
+# Target rules for target threadPool/CMakeFiles/ThreadPool.dir
+
+# All Build rule for target.
+threadPool/CMakeFiles/ThreadPool.dir/all:
+	$(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/ThreadPool.dir/build.make threadPool/CMakeFiles/ThreadPool.dir/depend
+	$(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/ThreadPool.dir/build.make threadPool/CMakeFiles/ThreadPool.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles --progress-num=10,11 "Built target ThreadPool"
+.PHONY : threadPool/CMakeFiles/ThreadPool.dir/all
+
+# Build rule for subdir invocation for target.
+threadPool/CMakeFiles/ThreadPool.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 threadPool/CMakeFiles/ThreadPool.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles 0
+.PHONY : threadPool/CMakeFiles/ThreadPool.dir/rule
+
+# Convenience name for target.
+ThreadPool: threadPool/CMakeFiles/ThreadPool.dir/rule
+
+.PHONY : ThreadPool
+
+# clean rule for target.
+threadPool/CMakeFiles/ThreadPool.dir/clean:
+	$(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/ThreadPool.dir/build.make threadPool/CMakeFiles/ThreadPool.dir/clean
+.PHONY : threadPool/CMakeFiles/ThreadPool.dir/clean
+
+#=============================================================================
+# Target rules for target protocol/CMakeFiles/Protocol.dir
+
+# All Build rule for target.
+protocol/CMakeFiles/Protocol.dir/all:
+	$(MAKE) $(MAKESILENT) -f protocol/CMakeFiles/Protocol.dir/build.make protocol/CMakeFiles/Protocol.dir/depend
+	$(MAKE) $(MAKESILENT) -f protocol/CMakeFiles/Protocol.dir/build.make protocol/CMakeFiles/Protocol.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles --progress-num=5,6,7 "Built target Protocol"
+.PHONY : protocol/CMakeFiles/Protocol.dir/all
+
+# Build rule for subdir invocation for target.
+protocol/CMakeFiles/Protocol.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protocol/CMakeFiles/Protocol.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles 0
+.PHONY : protocol/CMakeFiles/Protocol.dir/rule
+
+# Convenience name for target.
+Protocol: protocol/CMakeFiles/Protocol.dir/rule
+
+.PHONY : Protocol
+
+# clean rule for target.
+protocol/CMakeFiles/Protocol.dir/clean:
+	$(MAKE) $(MAKESILENT) -f protocol/CMakeFiles/Protocol.dir/build.make protocol/CMakeFiles/Protocol.dir/clean
+.PHONY : protocol/CMakeFiles/Protocol.dir/clean
+
+#=============================================================================
+# Target rules for target workQueue/CMakeFiles/WorkQueue.dir
+
+# All Build rule for target.
+workQueue/CMakeFiles/WorkQueue.dir/all:
+	$(MAKE) $(MAKESILENT) -f workQueue/CMakeFiles/WorkQueue.dir/build.make workQueue/CMakeFiles/WorkQueue.dir/depend
+	$(MAKE) $(MAKESILENT) -f workQueue/CMakeFiles/WorkQueue.dir/build.make workQueue/CMakeFiles/WorkQueue.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles --progress-num=12,13 "Built target WorkQueue"
+.PHONY : workQueue/CMakeFiles/WorkQueue.dir/all
+
+# Build rule for subdir invocation for target.
+workQueue/CMakeFiles/WorkQueue.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 workQueue/CMakeFiles/WorkQueue.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles 0
+.PHONY : workQueue/CMakeFiles/WorkQueue.dir/rule
+
+# Convenience name for target.
+WorkQueue: workQueue/CMakeFiles/WorkQueue.dir/rule
+
+.PHONY : WorkQueue
+
+# clean rule for target.
+workQueue/CMakeFiles/WorkQueue.dir/clean:
+	$(MAKE) $(MAKESILENT) -f workQueue/CMakeFiles/WorkQueue.dir/build.make workQueue/CMakeFiles/WorkQueue.dir/clean
+.PHONY : workQueue/CMakeFiles/WorkQueue.dir/clean
+
+#=============================================================================
+# Target rules for target sqlPaser/CMakeFiles/SQLPaser.dir
+
+# All Build rule for target.
+sqlPaser/CMakeFiles/SQLPaser.dir/all:
+	$(MAKE) $(MAKESILENT) -f sqlPaser/CMakeFiles/SQLPaser.dir/build.make sqlPaser/CMakeFiles/SQLPaser.dir/depend
+	$(MAKE) $(MAKESILENT) -f sqlPaser/CMakeFiles/SQLPaser.dir/build.make sqlPaser/CMakeFiles/SQLPaser.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles --progress-num=8,9 "Built target SQLPaser"
+.PHONY : sqlPaser/CMakeFiles/SQLPaser.dir/all
+
+# Build rule for subdir invocation for target.
+sqlPaser/CMakeFiles/SQLPaser.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sqlPaser/CMakeFiles/SQLPaser.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles 0
+.PHONY : sqlPaser/CMakeFiles/SQLPaser.dir/rule
+
+# Convenience name for target.
+SQLPaser: sqlPaser/CMakeFiles/SQLPaser.dir/rule
+
+.PHONY : SQLPaser
+
+# clean rule for target.
+sqlPaser/CMakeFiles/SQLPaser.dir/clean:
+	$(MAKE) $(MAKESILENT) -f sqlPaser/CMakeFiles/SQLPaser.dir/build.make sqlPaser/CMakeFiles/SQLPaser.dir/clean
+.PHONY : sqlPaser/CMakeFiles/SQLPaser.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -17,6 +17,8 @@ using namespace std;
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/syscall.h>
+#include <sys/epoll.h>
+#include <sys/socket.h>
 #include <errno.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -47,6 +49,8 @@ using namespace std;
 #include <fcntl.h>
 #include <errno.h>
 #include <time.h>
+#include "threadPool/threadPool.h"
+#include "epollServer/epollReactorServer.h"
 #define TESTPATH "/tmp/test.txt"
 #endif //ADVANCED_EXERCISES_GLOABL_H
 

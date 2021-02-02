@@ -10,10 +10,16 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../gloabl.h"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/epollServer/CMakeFiles/EpollServer.dir/DependInfo.cmake"
+  "/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/threadPool/CMakeFiles/ThreadPool.dir/DependInfo.cmake"
+  "/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/protocol/CMakeFiles/Protocol.dir/DependInfo.cmake"
+  "/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/workQueue/CMakeFiles/WorkQueue.dir/DependInfo.cmake"
+  "/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/sqlPaser/CMakeFiles/SQLPaser.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -2,22 +2,7 @@
 // Created by maomao on 2021/1/29.
 //
 #include "../gloabl.h"
-
-
-
-//事件驱动结构体
-typedef struct epollReactor{
-    int fd;                                             //要监听的文件描述符
-    int events;                                         //对应的监听事件
-    void (*call_back)(int fd,int events,void *arg);     //回调函数
-    void *arg;                                          //泛型参数
-    char buf[1024];                                     //缓冲区
-    int buflen;                                         //缓冲区长度
-    int epfd;                                           //红黑树根
-    int status;                                         //是否在监听:1->在红黑树上(监听),0->不在(不监听)
-    long last_active;                                   //记录每次加入红黑树 g_efd的时间值
-}erStruct;
-
+#include "../protocol/IndexTSDB_protocol.h"
 //全局epoll树的根
 int gepfd = 0;
 erStruct epollevents[EVENT_SIZE+1];
@@ -69,7 +54,7 @@ void senddata(int fd,int events,void *arg)
     printf("begin call %s\n",__FUNCTION__ );
     erStruct *ev =(epollReactor *)arg;
     again:
-    if ((n=write(fd,ev->buf,ev->buflen))==-1)
+    if ((n=send(fd,ev->buf,ev->buflen,0))==-1)
     {
         if (errno==EINTR)
         {
@@ -86,9 +71,11 @@ void senddata(int fd,int events,void *arg)
 //读数据
 void readData(int fd,int events,void *arg)
 {
+    int command = 0;
     printf("begin call %s\n",__FUNCTION__ );
     erStruct *ev = (epollReactor *)arg;
-    ev->buflen = read(fd,ev->buf,sizeof (ev->buf)); //通过read函数获取 字符长度赋值给buflen
+    ev->buflen = recv(fd,ev->buf,sizeof (ev->buf),0); //通过read函数获取 字符长度赋值给buflen
+
     again:
     if (ev->buflen ==-1){
         if (errno == EINTR)
@@ -100,7 +87,60 @@ void readData(int fd,int events,void *arg)
     }
     if (ev->buflen>0) //读到数据
     {
-        eventset(fd,EPOLLOUT,senddata,arg,ev);
+        command =ev->buf[0];
+        switch (command) {
+            case ADD_USER:
+                break;
+            case DELETE_USER:
+                break;
+            case UPDATE_USERPOWER:
+                break;
+            case CREATE_DATABASE:
+                break;
+            case DELETE_DATABASE:
+                break;
+            case CREATE_TABLE:
+                break;
+            case DELETE_TABLE:
+                break;
+            case SHOW_TABLE:
+                break;
+            case SHOW_DATABASE:
+                break;
+            case CHECK_DATABASE:
+                break;
+            case CLEAR_CACHE:
+                break;
+            case BATCH_DATA:
+                break;
+            case SELECT_SQL:
+                selectSql("select * from tableName where name = 'xx' ");
+                break;
+            case INSERT_SQL:
+                insertSql("insert into tableName values(v,v,v,v,v)");
+                break;
+            case DELETE_SQL:
+                deleteSql("delete from tableName where x=x ");
+                break;
+            case REQUEST_CONNECT:
+                break;
+            case RESPONSE_CONNECT:
+                break;
+            case SUCCESS_CONNECT:
+                break;
+            case REQUEST_PING:
+                break;
+            case RESPONSE_PANG:
+                break;
+            case DATA_CLOSE:
+                break;
+            case AGAIN_CONNECT:
+                break;
+            default:
+
+                eventset(fd,EPOLLOUT,senddata,arg,ev);
+
+        }
     }
     else if (ev -> buflen ==0) //对方关闭连接
     {
@@ -111,6 +151,7 @@ void readData(int fd,int events,void *arg)
 //新连接处理
 void initAccept(int fd,int events,void *arg)
 {
+
     printf("begin call %s,gepfd=%d\n",__FUNCTION__ ,gepfd);//__FUNCTION__ 函数名
     int i;
     struct sockaddr_in addr;
@@ -126,6 +167,7 @@ void initAccept(int fd,int events,void *arg)
             syserror("accept error");
         }
     }
+    //threadPool_add(thp,NULL,NULL);
     //查找myevents数组中可用的位置
     for (i = 0; i < EVENT_SIZE;i ++) {
         if (epollevents[i].fd ==0)//0标准输入 1标准输出 2标准错误
@@ -135,7 +177,7 @@ void initAccept(int fd,int events,void *arg)
 
     }
     //设置读事件
-    eventadd(cfd,EPOLLIN,readData,&epollevents[i],&epollevents[i]);
+    eventadd(cfd,EPOLLIN|EPOLLET,readData,&epollevents[i],&epollevents[i]);
 }
 
 int startServer(int port)
@@ -171,8 +213,8 @@ int startServer(int port)
     printf("gepfd == %d\n",gepfd);
     struct epoll_event events[1024];
     //添加最初始事件,将帧听的描述符添加到epoll树上
-    eventadd(lfd,EPOLLIN,initAccept,&epollevents[EVENT_SIZE],&epollevents[EVENT_SIZE]);
-
+    eventadd(lfd,EPOLLIN|EPOLLET,initAccept,&epollevents[EVENT_SIZE],&epollevents[EVENT_SIZE]);
+    
     for(;;)
     {
         ///TODO超时管理

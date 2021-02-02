@@ -99,6 +99,11 @@ IndexTSDB_EXTERNAL_OBJECTS =
 
 IndexTSDB: CMakeFiles/IndexTSDB.dir/main.cpp.o
 IndexTSDB: CMakeFiles/IndexTSDB.dir/build.make
+IndexTSDB: epollServer/libEpollServer.a
+IndexTSDB: threadPool/libThreadPool.a
+IndexTSDB: protocol/libProtocol.a
+IndexTSDB: workQueue/libWorkQueue.a
+IndexTSDB: sqlPaser/libSQLPaser.a
 IndexTSDB: CMakeFiles/IndexTSDB.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable IndexTSDB"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/IndexTSDB.dir/link.txt --verbose=$(VERBOSE)

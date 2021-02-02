@@ -76,17 +76,6 @@ CMAKE_BINARY_DIR = /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/clion-2020.3.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -97,6 +86,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/clion-2020.3.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -131,44 +131,82 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named epollServer
+# Target rules for targets named IndexTSDB
 
 # Build rule for target.
-epollServer: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 epollServer
-.PHONY : epollServer
+IndexTSDB: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 IndexTSDB
+.PHONY : IndexTSDB
 
 # fast build rule for target.
-epollServer/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/build
-.PHONY : epollServer/fast
+IndexTSDB/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IndexTSDB.dir/build.make CMakeFiles/IndexTSDB.dir/build
+.PHONY : IndexTSDB/fast
 
-epollServer/epollReactorServer.o: epollServer/epollReactorServer.cpp.o
+#=============================================================================
+# Target rules for targets named EpollServer
 
-.PHONY : epollServer/epollReactorServer.o
+# Build rule for target.
+EpollServer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 EpollServer
+.PHONY : EpollServer
 
-# target to build an object file
-epollServer/epollReactorServer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/epollServer/epollReactorServer.cpp.o
-.PHONY : epollServer/epollReactorServer.cpp.o
+# fast build rule for target.
+EpollServer/fast:
+	$(MAKE) $(MAKESILENT) -f epollServer/CMakeFiles/EpollServer.dir/build.make epollServer/CMakeFiles/EpollServer.dir/build
+.PHONY : EpollServer/fast
 
-epollServer/epollReactorServer.i: epollServer/epollReactorServer.cpp.i
+#=============================================================================
+# Target rules for targets named ThreadPool
 
-.PHONY : epollServer/epollReactorServer.i
+# Build rule for target.
+ThreadPool: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreadPool
+.PHONY : ThreadPool
 
-# target to preprocess a source file
-epollServer/epollReactorServer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/epollServer/epollReactorServer.cpp.i
-.PHONY : epollServer/epollReactorServer.cpp.i
+# fast build rule for target.
+ThreadPool/fast:
+	$(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/ThreadPool.dir/build.make threadPool/CMakeFiles/ThreadPool.dir/build
+.PHONY : ThreadPool/fast
 
-epollServer/epollReactorServer.s: epollServer/epollReactorServer.cpp.s
+#=============================================================================
+# Target rules for targets named Protocol
 
-.PHONY : epollServer/epollReactorServer.s
+# Build rule for target.
+Protocol: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Protocol
+.PHONY : Protocol
 
-# target to generate assembly for a file
-epollServer/epollReactorServer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/epollServer/epollReactorServer.cpp.s
-.PHONY : epollServer/epollReactorServer.cpp.s
+# fast build rule for target.
+Protocol/fast:
+	$(MAKE) $(MAKESILENT) -f protocol/CMakeFiles/Protocol.dir/build.make protocol/CMakeFiles/Protocol.dir/build
+.PHONY : Protocol/fast
+
+#=============================================================================
+# Target rules for targets named WorkQueue
+
+# Build rule for target.
+WorkQueue: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WorkQueue
+.PHONY : WorkQueue
+
+# fast build rule for target.
+WorkQueue/fast:
+	$(MAKE) $(MAKESILENT) -f workQueue/CMakeFiles/WorkQueue.dir/build.make workQueue/CMakeFiles/WorkQueue.dir/build
+.PHONY : WorkQueue/fast
+
+#=============================================================================
+# Target rules for targets named SQLPaser
+
+# Build rule for target.
+SQLPaser: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SQLPaser
+.PHONY : SQLPaser
+
+# fast build rule for target.
+SQLPaser/fast:
+	$(MAKE) $(MAKESILENT) -f sqlPaser/CMakeFiles/SQLPaser.dir/build.make sqlPaser/CMakeFiles/SQLPaser.dir/build
+.PHONY : SQLPaser/fast
 
 main.o: main.cpp.o
 
@@ -176,7 +214,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IndexTSDB.dir/build.make CMakeFiles/IndexTSDB.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -185,7 +223,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IndexTSDB.dir/build.make CMakeFiles/IndexTSDB.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -194,7 +232,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/epollServer.dir/build.make CMakeFiles/epollServer.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/IndexTSDB.dir/build.make CMakeFiles/IndexTSDB.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -205,10 +243,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... epollServer"
-	@echo "... epollServer/epollReactorServer.o"
-	@echo "... epollServer/epollReactorServer.i"
-	@echo "... epollServer/epollReactorServer.s"
+	@echo "... EpollServer"
+	@echo "... IndexTSDB"
+	@echo "... Protocol"
+	@echo "... SQLPaser"
+	@echo "... ThreadPool"
+	@echo "... WorkQueue"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
