@@ -15,5 +15,9 @@ bool deleteSql(char*sql){
 
 char* selectSql(char*sql){
 
-    return false;
+    return " ";
+}
+
+static void ThisFmtU8(u8 d){
+
 }

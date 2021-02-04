@@ -332,7 +332,13 @@
 		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/protocol/crc16.cpp">
 			<Option target="Protocol"/>
 		</Unit>
-		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/sqlPaser/sqlwordsplitter.cpp">
+		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/sqlPaser/sqlGrammaticalAnalysis.cpp">
+			<Option target="SQLPaser"/>
+		</Unit>
+		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/sqlPaser/sqlScanner.cpp">
+			<Option target="SQLPaser"/>
+		</Unit>
+		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/sqlPaser/tireTree.cpp">
 			<Option target="SQLPaser"/>
 		</Unit>
 		<Unit filename="/home/maomao/Project/easySQl/IndexTSDB/threadPool/threadPool.cpp">

@@ -6,3 +6,10 @@
 #define INDEXTSDB_WORKQUEUE_H
 
 #endif //INDEXTSDB_WORKQUEUE_H
+
+typedef struct {
+    char * timeStamp;
+    char * tableId;
+    char * data;
+}batQueue;
+
