@@ -208,6 +208,58 @@ SQLPaser/fast:
 	$(MAKE) $(MAKESILENT) -f sqlPaser/CMakeFiles/SQLPaser.dir/build.make sqlPaser/CMakeFiles/SQLPaser.dir/build
 .PHONY : SQLPaser/fast
 
+#=============================================================================
+# Target rules for targets named Indexes
+
+# Build rule for target.
+Indexes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Indexes
+.PHONY : Indexes
+
+# fast build rule for target.
+Indexes/fast:
+	$(MAKE) $(MAKESILENT) -f Indexes/CMakeFiles/Indexes.dir/build.make Indexes/CMakeFiles/Indexes.dir/build
+.PHONY : Indexes/fast
+
+#=============================================================================
+# Target rules for targets named Primitive
+
+# Build rule for target.
+Primitive: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Primitive
+.PHONY : Primitive
+
+# fast build rule for target.
+Primitive/fast:
+	$(MAKE) $(MAKESILENT) -f primitive/CMakeFiles/Primitive.dir/build.make primitive/CMakeFiles/Primitive.dir/build
+.PHONY : Primitive/fast
+
+#=============================================================================
+# Target rules for targets named UserOperation
+
+# Build rule for target.
+UserOperation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 UserOperation
+.PHONY : UserOperation
+
+# fast build rule for target.
+UserOperation/fast:
+	$(MAKE) $(MAKESILENT) -f user/CMakeFiles/UserOperation.dir/build.make user/CMakeFiles/UserOperation.dir/build
+.PHONY : UserOperation/fast
+
+#=============================================================================
+# Target rules for targets named ResultCache
+
+# Build rule for target.
+ResultCache: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ResultCache
+.PHONY : ResultCache
+
+# fast build rule for target.
+ResultCache/fast:
+	$(MAKE) $(MAKESILENT) -f resultCache/CMakeFiles/ResultCache.dir/build.make resultCache/CMakeFiles/ResultCache.dir/build
+.PHONY : ResultCache/fast
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -245,9 +297,13 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... EpollServer"
 	@echo "... IndexTSDB"
+	@echo "... Indexes"
+	@echo "... Primitive"
 	@echo "... Protocol"
+	@echo "... ResultCache"
 	@echo "... SQLPaser"
 	@echo "... ThreadPool"
+	@echo "... UserOperation"
 	@echo "... WorkQueue"
 	@echo "... main.o"
 	@echo "... main.i"

@@ -16,3 +16,15 @@
 /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/sqlPaser/CMakeFiles/rebuild_cache.dir
 /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/sqlPaser/CMakeFiles/edit_cache.dir
 /home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/sqlPaser/CMakeFiles/SQLPaser.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Indexes/CMakeFiles/rebuild_cache.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Indexes/CMakeFiles/edit_cache.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Indexes/CMakeFiles/Indexes.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/primitive/CMakeFiles/edit_cache.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/primitive/CMakeFiles/rebuild_cache.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/primitive/CMakeFiles/Primitive.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/user/CMakeFiles/rebuild_cache.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/user/CMakeFiles/edit_cache.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/user/CMakeFiles/UserOperation.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/resultCache/CMakeFiles/rebuild_cache.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/resultCache/CMakeFiles/edit_cache.dir
+/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/resultCache/CMakeFiles/ResultCache.dir

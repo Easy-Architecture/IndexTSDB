@@ -62,6 +62,26 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/sqlPaser/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/Indexes/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/primitive/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/user/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/maomao/Project/easySQl/IndexTSDB/cmake-build-debug/resultCache/cmake_install.cmake")
+endif()
+
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()

@@ -4,5 +4,6 @@
 CMakeFiles/IndexTSDB.dir/main.cpp.o: ../epollServer/epollReactorServer.h
 CMakeFiles/IndexTSDB.dir/main.cpp.o: ../gloabl.h
 CMakeFiles/IndexTSDB.dir/main.cpp.o: ../main.cpp
+CMakeFiles/IndexTSDB.dir/main.cpp.o: ../protocol/IndexTSDB_protocol.h
 CMakeFiles/IndexTSDB.dir/main.cpp.o: ../threadPool/threadPool.h
 

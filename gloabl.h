@@ -49,8 +49,10 @@ using namespace std;
 #include <fcntl.h>
 #include <errno.h>
 #include <time.h>
+#include <sys/mman.h>
 #include "threadPool/threadPool.h"
 #include "epollServer/epollReactorServer.h"
+#include "protocol/IndexTSDB_protocol.h"
 #define TESTPATH "/tmp/test.txt"
 #endif //ADVANCED_EXERCISES_GLOABL_H
 

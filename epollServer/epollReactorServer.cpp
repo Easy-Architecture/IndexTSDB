@@ -71,7 +71,7 @@ void senddata(int fd,int events,void *arg)
 //读数据
 void readData(int fd,int events,void *arg)
 {
-    int command = 0;
+
     printf("begin call %s\n",__FUNCTION__ );
     erStruct *ev = (epollReactor *)arg;
     ev->buflen = recv(fd,ev->buf,sizeof (ev->buf),0); //通过read函数获取 字符长度赋值给buflen
@@ -87,60 +87,21 @@ void readData(int fd,int events,void *arg)
     }
     if (ev->buflen>0) //读到数据
     {
-        command =ev->buf[0];
-        switch (command) {
-            case ADD_USER:
-                break;
-            case DELETE_USER:
-                break;
-            case UPDATE_USERPOWER:
-                break;
-            case CREATE_DATABASE:
-                break;
-            case DELETE_DATABASE:
-                break;
-            case CREATE_TABLE:
-                break;
-            case DELETE_TABLE:
-                break;
-            case SHOW_TABLE:
-                break;
-            case SHOW_DATABASE:
-                break;
-            case CHECK_DATABASE:
-                break;
-            case CLEAR_CACHE:
-                break;
-            case BATCH_DATA:
-                break;
-            case SELECT_SQL:
-                selectSql("select * from tableName where name = 'xx' ");
-                break;
-            case INSERT_SQL:
-                insertSql("insert into tableName values(v,v,v,v,v)");
-                break;
-            case DELETE_SQL:
-                deleteSql("delete from tableName where x=x ");
-                break;
-            case REQUEST_CONNECT:
-                break;
-            case RESPONSE_CONNECT:
-                break;
-            case SUCCESS_CONNECT:
-                break;
-            case REQUEST_PING:
-                break;
-            case RESPONSE_PANG:
-                break;
-            case DATA_CLOSE:
-                break;
-            case AGAIN_CONNECT:
-                break;
-            default:
+        //卫语句
+        if (!checkCommand(ev->buf[0]))
+        {
+            printf("%c",ev->buf[0]);
+            //命令类型不正确
+            printf("命令类型不正确\n");
 
-                eventset(fd,EPOLLOUT,senddata,arg,ev);
+            // eventset(fd,EPOLLOUT,senddata,arg,ev);
+         }
 
+        //处理客户端发来的数据包
+        if (ProtocolProcessing(ev->buf)){//客户端发包没有问题
+            //eventset(fd,EPOLLOUT,senddata,arg,ev);
         }
+
     }
     else if (ev -> buflen ==0) //对方关闭连接
     {
