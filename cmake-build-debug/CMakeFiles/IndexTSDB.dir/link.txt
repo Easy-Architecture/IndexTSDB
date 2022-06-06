@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/IndexTSDB.dir/main.cpp.o  -o IndexTSDB  epollServer/libEpollServer.a threadPool/libThreadPool.a protocol/libProtocol.a workQueue/libWorkQueue.a sqlPaser/libSQLPaser.a Indexes/libIndexes.a primitive/libPrimitive.a user/libUserOperation.a resultCache/libResultCache.a 
